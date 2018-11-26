@@ -1,15 +1,14 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
-import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TextArea;
-
-import java.awt.event.ActionEvent;
+import javafx.scene.input.KeyEvent;
 
 public class Controller {
     public TextArea imeField;
@@ -29,13 +28,11 @@ public class Controller {
     public RadioButton dugmeNe1;
     public RadioButton dugmeDa2;
 
-
     public void onBtnClick(javafx.event.ActionEvent actionEvent) {
         System.out.println("Ime: " + imeField.getText() + "\n" + "Prezime: " + prezimeField.getText() + "\n" + "Broj indeksa: " + indeks.getText() + "\n");
         System.out.println("JMBG: " + JMBG.getText() + "\n" + "Datum rodjenja: " + rodjenje.getText() + "\n" + "Mjesto rodjenja: " + mjesto.getValue() + "\n");
         System.out.println("Kontakt adresa: " + konAdresa.getText() + "\n" + "KontaktTelefon: " + konTel.getText() + "\n" + "E-mail adresa: " + mailAdresa.getText() + "\n");
         System.out.println("Odjsek: " + odjesk.getText() + "\n" + "Godina: " + godina.getText() + "\n" + "Ciklus: " + ciklus.getText() + "\n");
-
 
         imeField.setText("");
         prezimeField.setText("");
@@ -54,5 +51,53 @@ public class Controller {
         ObservableList<String> opcije = FXCollections.observableArrayList("Sarajevo", "Zenica","Tuzla", "Mostar", "Gorazde");
         mjesto.getItems().clear();
         mjesto.getItems().addAll(opcije);
+    }
+
+    public void unosImena(KeyEvent keyEvent) {
+        imeField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                Validacija e = new Validacija();
+                if (e.validno(n)) {
+                    imeField.getStyleClass().removeAll("poljeNijeIspravno");
+                    imeField.getStyleClass().add("poljeIspravno");
+                } else {
+                    imeField.getStyleClass().removeAll("poljeIspravno");
+                    imeField.getStyleClass().add("poljeNijeIspravno");
+                }
+            }
+        });
+    }
+
+    public void unosPrezimena(KeyEvent keyEvent) {
+        prezimeField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                Validacija e = new Validacija();
+                if (e.validno(n)) {
+                    prezimeField.getStyleClass().removeAll("poljeNijeIspravno");
+                    prezimeField.getStyleClass().add("poljeIspravno");
+                } else {
+                    prezimeField.getStyleClass().removeAll("poljeIspravno");
+                    prezimeField.getStyleClass().add("poljeNijeIspravno");
+                }
+            }
+        });
+    }
+
+    public void unosIndeksa(KeyEvent keyEvent) {
+        indeks.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                Validacija e = new Validacija();
+                if (e.validnoIndeks(n)) {
+                    indeks.getStyleClass().removeAll("poljeNijeIspravno");
+                    indeks.getStyleClass().add("poljeIspravno");
+                } else {
+                    indeks.getStyleClass().removeAll("poljeIspravno");
+                    indeks.getStyleClass().add("poljeNijeIspravno");
+                }
+            }
+        });
     }
 }

@@ -40,18 +40,18 @@
                   <Label text="Ime:" />
                   <Label text="Prezime:" GridPane.rowIndex="1" />
                   <Label text="Broj indeksa:" GridPane.rowIndex="2" />
-                  <TextArea fx:id="imeField" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1">
+                  <TextArea fx:id="imeField" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1" onKeyTyped="#unosImena">
                <GridPane.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-                  <TextArea fx:id="prezimeField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextArea fx:id="prezimeField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#unosPrezimena">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="5.0" />
                </padding></TextArea>
-                  <TextArea fx:id="indeks" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextArea fx:id="indeks" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyTyped="#unosIndeksa">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
