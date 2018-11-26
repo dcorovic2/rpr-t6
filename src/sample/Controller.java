@@ -5,10 +5,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
+import jdk.nashorn.internal.runtime.regexp.joni.Warnings;
 
 public class Controller {
     public TextArea imeField;
@@ -45,6 +47,12 @@ public class Controller {
         odjesk.setText("");
         godina.setText("");
         ciklus.setText("");
+
+        Alert alert = new Alert(Alert.AlertType.WARNING, "File already exists. Do you want to override?");
+        alert.setTitle("Upozorenje!");
+        alert.setContentText("Uneseni podaci nisu validni");
+        alert.getDialogPane().setPrefSize(200, 100);
+        alert.show();
     }
 
     public void prikazi(Event event) {
