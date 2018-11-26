@@ -31,28 +31,30 @@ public class Controller {
     public RadioButton dugmeDa2;
 
     public void onBtnClick(javafx.event.ActionEvent actionEvent) {
-        System.out.println("Ime: " + imeField.getText() + "\n" + "Prezime: " + prezimeField.getText() + "\n" + "Broj indeksa: " + indeks.getText() + "\n");
-        System.out.println("JMBG: " + JMBG.getText() + "\n" + "Datum rodjenja: " + rodjenje.getText() + "\n" + "Mjesto rodjenja: " + mjesto.getValue() + "\n");
-        System.out.println("Kontakt adresa: " + konAdresa.getText() + "\n" + "KontaktTelefon: " + konTel.getText() + "\n" + "E-mail adresa: " + mailAdresa.getText() + "\n");
-        System.out.println("Odjsek: " + odjesk.getText() + "\n" + "Godina: " + godina.getText() + "\n" + "Ciklus: " + ciklus.getText() + "\n");
+        if(true) {
+            System.out.println("Ime: " + imeField.getText() + "\n" + "Prezime: " + prezimeField.getText() + "\n" + "Broj indeksa: " + indeks.getText() + "\n");
+            System.out.println("JMBG: " + JMBG.getText() + "\n" + "Datum rodjenja: " + rodjenje.getText() + "\n" + "Mjesto rodjenja: " + mjesto.getValue() + "\n");
+            System.out.println("Kontakt adresa: " + konAdresa.getText() + "\n" + "KontaktTelefon: " + konTel.getText() + "\n" + "E-mail adresa: " + mailAdresa.getText() + "\n");
+            System.out.println("Odjsek: " + odjesk.getText() + "\n" + "Godina: " + godina.getText() + "\n" + "Ciklus: " + ciklus.getText() + "\n");
 
-        imeField.setText("");
-        prezimeField.setText("");
-        indeks.setText("");
-        JMBG.setText("");
-        rodjenje.setText("");
-        konAdresa.setText("");
-        konTel.setText("");
-        mailAdresa.setText("");
-        odjesk.setText("");
-        godina.setText("");
-        ciklus.setText("");
-
-        Alert alert = new Alert(Alert.AlertType.WARNING, "File already exists. Do you want to override?");
-        alert.setTitle("Upozorenje!");
-        alert.setContentText("Uneseni podaci nisu validni");
-        alert.getDialogPane().setPrefSize(200, 100);
-        alert.show();
+            imeField.setText("");
+            prezimeField.setText("");
+            indeks.setText("");
+            JMBG.setText("");
+            rodjenje.setText("");
+            konAdresa.setText("");
+            konTel.setText("");
+            mailAdresa.setText("");
+            odjesk.setText("");
+            godina.setText("");
+            ciklus.setText("");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "File already exists. Do you want to override?");
+            alert.setTitle("Upozorenje!");
+            alert.setContentText("Uneseni podaci nisu validni");
+            alert.getDialogPane().setPrefSize(200, 100);
+            alert.show();
+        }
     }
 
     public void prikazi(Event event) {
