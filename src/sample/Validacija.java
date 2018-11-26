@@ -2,8 +2,7 @@ package sample;
 
 public class Validacija {
 
-    public Validacija(){
-    }
+    public Validacija(){}
 
     public boolean validno(String s){
         if(s.length()<20 && s.length()>=1) return true;
@@ -51,6 +50,18 @@ public class Validacija {
 
     public boolean validnoMail(String n) {
         if(n.length()>0 && n.contains("@") && (n.contains("com") || n.contains("ba"))) return true;
+        return false;
+    }
+
+    public boolean validnoJMBG(String n) {
+        if(n.length() == 13){
+            try{
+                Integer.parseInt(n);
+            } catch (NumberFormatException e){
+                return false;
+            }
+            return true;
+        }
         return false;
     }
 }

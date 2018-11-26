@@ -180,4 +180,20 @@ public class Controller {
             }
         });
     }
+
+    public void unosJMBG(KeyEvent keyEvent) {
+        JMBG.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                Validacija e = new Validacija();
+                if (e.validnoJMBG(n)) {
+                    JMBG.getStyleClass().removeAll("poljeNijeIspravno");
+                    JMBG.getStyleClass().add("poljeIspravno");
+                } else {
+                    JMBG.getStyleClass().removeAll("poljeIspravno");
+                    JMBG.getStyleClass().add("poljeNijeIspravno");
+                }
+            }
+        });
+    }
 }
