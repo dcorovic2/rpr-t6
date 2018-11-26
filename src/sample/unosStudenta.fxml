@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="691.0" maxWidth="-Infinity" minHeight="626.0" minWidth="622.0" prefHeight="691.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="721.0" maxWidth="-Infinity" minHeight="626.0" minWidth="622.0" prefHeight="721.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
 <stylesheets>
     <URL value="@izgledaGlavnog.css" />
 </stylesheets>
@@ -25,7 +25,7 @@
          <VBox.margin>
             <Insets left="5.0" top="5.0" />
          </VBox.margin></Label>
-            <GridPane prefHeight="115.0" prefWidth="637.0" styleClass="groupBox">
+            <GridPane prefHeight="150.0" prefWidth="637.0" styleClass="groupBox">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,20 +39,20 @@
                   <Label text="Ime:" />
                   <Label text="Prezime:" GridPane.rowIndex="1" />
                   <Label text="Broj indeksa:" GridPane.rowIndex="2" />
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                  <TextArea prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextArea fx:id="imeField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="5.0" />
                </padding></TextArea>
-                  <TextArea prefHeight="29.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextArea prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
                </children>
          <opaqueInsets>
@@ -73,7 +73,7 @@
             <Font name="Calibri Italic" size="9.0" />
          </font>
       </Label>
-      <GridPane prefHeight="118.0" prefWidth="606.0" styleClass="groupBox">
+      <GridPane prefHeight="136.0" prefWidth="637.0" styleClass="groupBox">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -89,15 +89,15 @@
             <Label text="Mjesto rodjenja:" GridPane.rowIndex="2" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                </GridPane.margin></TextArea>
          </children>
          <VBox.margin>
@@ -115,7 +115,7 @@
             <Insets left="5.0" />
          </VBox.margin>
       </Label>
-      <GridPane prefHeight="120.0" prefWidth="606.0" styleClass="groupBox">
+      <GridPane prefHeight="130.0" prefWidth="637.0" styleClass="groupBox">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -131,7 +131,7 @@
             <Label text="Email adresa:" GridPane.rowIndex="2" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
@@ -139,7 +139,7 @@
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
          </children>
          <VBox.margin>
@@ -177,15 +177,15 @@
             <Label text="Da li student pripada posebnim boračkim kategorijama?" GridPane.rowIndex="4" />
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets left="5.0" right="5.0" />
                </GridPane.margin></TextArea>
             <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
@@ -215,7 +215,7 @@
       </GridPane>
       <Button fx:id="dugme" mnemonicParsing="false" prefHeight="50.0" prefWidth="168.0" text="POTVRDI" textFill="#000000f5">
          <VBox.margin>
-            <Insets left="5.0" top="10.0" />
+            <Insets bottom="5.0" left="5.0" top="10.0" />
          </VBox.margin></Button>
    </children>
 </VBox>

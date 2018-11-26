@@ -12,11 +12,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("unosStudenta.fxml"));
         primaryStage.setTitle("Formular za unos studenta");
-        primaryStage.setScene(new Scene(root, 647.0, 691.0));
+        primaryStage.setScene(new Scene(root, 647.0, 721.0));
         primaryStage.show();
         primaryStage.setResizable(false);
-    }
 
+
+    }
 
     public static void main(String[] args) {
         launch(args);
