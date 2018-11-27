@@ -10,6 +10,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import jdk.nashorn.internal.runtime.regexp.joni.Warnings;
 
 public class Controller {
@@ -29,7 +30,7 @@ public class Controller {
     public RadioButton dugmeNe2;
     public RadioButton dugmeNe1;
     public RadioButton dugmeDa2;
-    public boolean validnosti1 = true, validnosti2 = true, validnosti3 = true, validnosti4 = true, validnosti5 = true, validnosti6 = true, validnosti7 = true, validnosti8 = true, validnosti9 = true;
+    public boolean validnosti1, validnosti2, validnosti3, validnosti4, validnosti5, validnosti6, validnosti7, validnosti8, validnosti9;
 
     public void onBtnClick(javafx.event.ActionEvent actionEvent) {
         if(validnosti1 && validnosti2 && validnosti3 && validnosti4 && validnosti5 && validnosti6 && validnosti7 && validnosti8 && validnosti9) {
@@ -236,5 +237,21 @@ public class Controller {
                 }
             }
         });
+    }
+
+    public void clickRadBtnDa1(MouseEvent mouseEvent) {
+        if(dugmeNe1.isSelected()) dugmeNe1.setSelected(false);
+    }
+
+    public void clickTadBtnNe1(MouseEvent mouseEvent) {
+        if(dugmeDa1.isSelected()) dugmeDa1.setSelected(false);
+    }
+
+    public void clickRadBtnDa2(MouseEvent mouseEvent) {
+        if(dugmeNe2.isSelected()) dugmeNe2.setSelected(false);
+    }
+
+    public void clickTadBtnNe2(MouseEvent mouseEvent) {
+        if(dugmeDa2.isSelected()) dugmeDa2.setSelected(false);
     }
 }
