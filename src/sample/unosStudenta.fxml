@@ -37,9 +37,9 @@
                 <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Ime:" />
-                  <Label text="Prezime:" GridPane.rowIndex="1" />
-                  <Label text="Broj indeksa:" GridPane.rowIndex="2" />
+                  <Label text="*Ime:" />
+                  <Label text="*Prezime:" GridPane.rowIndex="1" />
+                  <Label text="*Broj indeksa:" GridPane.rowIndex="2" />
                   <TextArea fx:id="imeField" onKeyTyped="#unosImena" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
@@ -85,8 +85,8 @@
           <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="JMBG:" />
-            <Label text="Datum rodjenja:" GridPane.rowIndex="1" />
+            <Label text="*JMBG:" />
+            <Label text="*Datum rodjenja:" GridPane.rowIndex="1" />
             <Label text="Mjesto rodjenja:" GridPane.rowIndex="2" />
             <TextArea fx:id="JMBG" onKeyTyped="#unosJMBG" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
@@ -130,7 +130,7 @@
          <children>
             <Label text="Kontakt adresa:" />
             <Label text="Kontakt telefon:" GridPane.rowIndex="1" />
-            <Label text="Email adresa:" GridPane.rowIndex="2" />
+            <Label text="*Email adresa:" GridPane.rowIndex="2" />
             <TextArea fx:id="konAdresa" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
@@ -172,9 +172,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Odsjek:" />
-            <Label text="Godina studija:" GridPane.rowIndex="1" />
-            <Label text="Ciklus studija:" GridPane.rowIndex="2" />
+            <Label text="*Odsjek:" />
+            <Label text="*Godina studija:" GridPane.rowIndex="1" />
+            <Label text="*Ciklus studija:" GridPane.rowIndex="2" />
             <Label text="Da li je student redovan ili redovan samofinansirajući?" GridPane.rowIndex="3" />
             <Label text="Da li student pripada posebnim boračkim kategorijama?" GridPane.rowIndex="4" />
             <TextArea fx:id="odjesk" onKeyTyped="#unosOdsjeka" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">

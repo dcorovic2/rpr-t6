@@ -11,7 +11,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import jdk.nashorn.internal.runtime.regexp.joni.Warnings;
 
 public class Controller {
     public TextArea imeField;
@@ -240,6 +239,7 @@ public class Controller {
                 } else {
                     JMBG.getStyleClass().removeAll("poljeIspravno");
                     JMBG.getStyleClass().add("poljeNijeIspravno");
+
                     validnosti9 = false;
                 }
             }

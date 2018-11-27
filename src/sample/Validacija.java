@@ -22,6 +22,7 @@ public class Validacija {
     }
 
     public boolean validnoTelefon(String n) {
+        if(n.length()==0) return true;
         if(n.length()==9){
             try{
                 Long.parseLong(n);
