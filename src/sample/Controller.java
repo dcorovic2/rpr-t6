@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -9,8 +10,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 public class Controller {
     public TextArea imeField;
@@ -84,6 +88,9 @@ public class Controller {
     }
 
     public void unosImena(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(imeField, Validator.createEmptyValidator("Text is Required!"));
+
         imeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -91,17 +98,25 @@ public class Controller {
                 if (e.validno(n)) {
                     imeField.getStyleClass().removeAll("poljeNijeIspravno");
                     imeField.getStyleClass().add("poljeIspravno");
+                    validationSupport.setErrorDecorationEnabled(false);
+
                     validnosti1 = true;
                 } else {
                     imeField.getStyleClass().removeAll("poljeIspravno");
                     imeField.getStyleClass().add("poljeNijeIspravno");
+                    validationSupport.setErrorDecorationEnabled(true); //da pokaze da je greska
+
                     validnosti1 = false;
                 }
             }
         });
+
     }
 
     public void unosPrezimena(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(prezimeField, Validator.createEmptyValidator("Text is Required!"));
+
         prezimeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -120,6 +135,9 @@ public class Controller {
     }
 
     public void unosIndeksa(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(indeks, Validator.createEmptyValidator("Text is Required!"));
+
         indeks.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -138,6 +156,9 @@ public class Controller {
     }
 
     public void unosTelefona(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(konTel, Validator.createEmptyValidator("Text is Required!"));
+
         konTel.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -156,6 +177,9 @@ public class Controller {
     }
 
     public void unosOdsjeka(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(odjesk, Validator.createEmptyValidator("Text is Required!"));
+
         odjesk.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -163,10 +187,12 @@ public class Controller {
                 if (e.validnoOdsjek(n)) {
                     odjesk.getStyleClass().removeAll("poljeNijeIspravno");
                     odjesk.getStyleClass().add("poljeIspravno");
+
                     validnosti5 = true;
                 } else {
                     odjesk.getStyleClass().removeAll("poljeIspravno");
                     odjesk.getStyleClass().add("poljeNijeIspravno");
+
                     validnosti5 = false;
                 }
             }
@@ -174,6 +200,9 @@ public class Controller {
     }
 
     public void unosGodine(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(godina, Validator.createEmptyValidator("Text is Required!"));
+
         godina.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -192,6 +221,9 @@ public class Controller {
     }
 
     public void unosCiklusa(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(ciklus, Validator.createEmptyValidator("Text is Required!"));
+
         ciklus.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -210,6 +242,9 @@ public class Controller {
     }
 
     public void unosMaila(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(mailAdresa, Validator.createEmptyValidator("Text is Required!"));
+
         mailAdresa.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -228,6 +263,9 @@ public class Controller {
     }
 
     public void unosJMBG(KeyEvent keyEvent) {
+        ValidationSupport validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(JMBG, Validator.createEmptyValidator("Text is Required!"));
+
         JMBG.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -261,4 +299,5 @@ public class Controller {
     public void clickTadBtnNe2(MouseEvent mouseEvent) {
         if(dugmeDa2.isSelected()) dugmeDa2.setSelected(false);
     }
+
 }
