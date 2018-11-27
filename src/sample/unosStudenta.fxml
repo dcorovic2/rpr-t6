@@ -40,18 +40,18 @@
                   <Label text="Ime:" />
                   <Label text="Prezime:" GridPane.rowIndex="1" />
                   <Label text="Broj indeksa:" GridPane.rowIndex="2" />
-                  <TextArea fx:id="imeField" onKeyTyped="#unosImena" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1">
+                  <TextArea fx:id="imeField" onKeyTyped="#unosImena" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1" onMouseClicked="#misIme" onMouseReleased="#oslobodiIme">
                <GridPane.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-                  <TextArea fx:id="prezimeField" onKeyTyped="#unosPrezimena" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextArea fx:id="prezimeField" onKeyTyped="#unosPrezimena" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#misPrezime" onMouseReleased="#oslobodiPrezime">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="5.0" />
                </padding></TextArea>
-                  <TextArea fx:id="indeks" onKeyTyped="#unosIndeksa" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextArea fx:id="indeks" onKeyTyped="#unosIndeksa" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#misIndeks" onMouseReleased="#oslobodiIndeks">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
@@ -88,7 +88,7 @@
             <Label text="JMBG:" />
             <Label text="Datum rodjenja:" GridPane.rowIndex="1" />
             <Label text="Mjesto rodjenja:" GridPane.rowIndex="2" />
-            <TextArea fx:id="JMBG" onKeyTyped="#unosJMBG" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <TextArea fx:id="JMBG" onKeyTyped="#unosJMBG" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" onMouseClicked="#misJMBG" onMouseReleased="#oslobodiJMBG">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
@@ -135,11 +135,11 @@
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="konTel" onKeyTyped="#unosTelefona" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextArea fx:id="konTel" onKeyTyped="#unosTelefona" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#misTel" onMouseReleased="#oslobodiTel">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="mailAdresa" onKeyTyped="#unosMaila" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextArea fx:id="mailAdresa" onKeyTyped="#unosMaila" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#misMail" onMouseReleased="#oslobodiMail">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
@@ -177,15 +177,15 @@
             <Label text="Ciklus studija:" GridPane.rowIndex="2" />
             <Label text="Da li je student redovan ili redovan samofinansirajući?" GridPane.rowIndex="3" />
             <Label text="Da li student pripada posebnim boračkim kategorijama?" GridPane.rowIndex="4" />
-            <TextArea fx:id="odjesk" onKeyTyped="#unosOdsjeka" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <TextArea fx:id="odjesk" onKeyTyped="#unosOdsjeka" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" onMouseClicked="#misOdsjek" onMouseReleased="#oslobodiOdsjek">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="godina" onKeyTyped="#unosGodine" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextArea fx:id="godina" onKeyTyped="#unosGodine" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onMouseClicked="#misGodina" onMouseReleased="#oslobodiGodinu">
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="ciklus" onKeyTyped="#unosCiklusa" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextArea fx:id="ciklus" onKeyTyped="#unosCiklusa" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onMouseClicked="#misCiklus" onMouseReleased="#oslobodiCiklus">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>

@@ -33,6 +33,7 @@ public class Controller {
     public RadioButton dugmeNe2;
     public RadioButton dugmeNe1;
     public RadioButton dugmeDa2;
+    public ValidationSupport validationSupport, validationSupport1, validationSupport2, validationSupport3, validationSupport4, validationSupport5, validationSupport6, validationSupport7, validationSupport8;
     public boolean validnosti1, validnosti2, validnosti3, validnosti4, validnosti5, validnosti6, validnosti7, validnosti8, validnosti9;
 
     public void onBtnClick(javafx.event.ActionEvent actionEvent) {
@@ -88,9 +89,6 @@ public class Controller {
     }
 
     public void unosImena(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(imeField, Validator.createEmptyValidator("Text is Required!"));
-
         imeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -98,14 +96,10 @@ public class Controller {
                 if (e.validno(n)) {
                     imeField.getStyleClass().removeAll("poljeNijeIspravno");
                     imeField.getStyleClass().add("poljeIspravno");
-                    validationSupport.setErrorDecorationEnabled(false);
-
                     validnosti1 = true;
                 } else {
                     imeField.getStyleClass().removeAll("poljeIspravno");
                     imeField.getStyleClass().add("poljeNijeIspravno");
-                    validationSupport.setErrorDecorationEnabled(true); //da pokaze da je greska
-
                     validnosti1 = false;
                 }
             }
@@ -114,9 +108,6 @@ public class Controller {
     }
 
     public void unosPrezimena(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(prezimeField, Validator.createEmptyValidator("Text is Required!"));
-
         prezimeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -135,9 +126,6 @@ public class Controller {
     }
 
     public void unosIndeksa(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(indeks, Validator.createEmptyValidator("Text is Required!"));
-
         indeks.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -156,9 +144,6 @@ public class Controller {
     }
 
     public void unosTelefona(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(konTel, Validator.createEmptyValidator("Text is Required!"));
-
         konTel.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -177,9 +162,6 @@ public class Controller {
     }
 
     public void unosOdsjeka(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(odjesk, Validator.createEmptyValidator("Text is Required!"));
-
         odjesk.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -200,9 +182,6 @@ public class Controller {
     }
 
     public void unosGodine(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(godina, Validator.createEmptyValidator("Text is Required!"));
-
         godina.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -221,9 +200,6 @@ public class Controller {
     }
 
     public void unosCiklusa(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(ciklus, Validator.createEmptyValidator("Text is Required!"));
-
         ciklus.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -242,9 +218,6 @@ public class Controller {
     }
 
     public void unosMaila(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(mailAdresa, Validator.createEmptyValidator("Text is Required!"));
-
         mailAdresa.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -263,9 +236,6 @@ public class Controller {
     }
 
     public void unosJMBG(KeyEvent keyEvent) {
-        ValidationSupport validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(JMBG, Validator.createEmptyValidator("Text is Required!"));
-
         JMBG.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -300,4 +270,93 @@ public class Controller {
         if(dugmeDa2.isSelected()) dugmeDa2.setSelected(false);
     }
 
+    public void misIme(MouseEvent mouseEvent) {
+        validationSupport = new ValidationSupport();
+        validationSupport.registerValidator(imeField, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport.setErrorDecorationEnabled(!validnosti1);
+    }
+
+    public void oslobodiIme(MouseEvent mouseEvent) {
+        validationSupport.setErrorDecorationEnabled(false);
+    }
+
+    public void misPrezime(MouseEvent mouseEvent) {
+        validationSupport1 = new ValidationSupport();
+        validationSupport1.registerValidator(prezimeField, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport1.setErrorDecorationEnabled(!validnosti2);
+    }
+
+    public void oslobodiPrezime(MouseEvent mouseEvent) {
+        validationSupport1.setErrorDecorationEnabled(false);
+    }
+
+    public void misIndeks(MouseEvent mouseEvent) {
+        validationSupport2 = new ValidationSupport();
+        validationSupport2.registerValidator(indeks, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport2.setErrorDecorationEnabled(!validnosti3);
+    }
+
+    public void oslobodiIndeks(MouseEvent mouseEvent) {
+        validationSupport2.setErrorDecorationEnabled(false);
+    }
+
+    public void misJMBG(MouseEvent mouseEvent) {
+        validationSupport3 = new ValidationSupport();
+        validationSupport3.registerValidator(JMBG, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport3.setErrorDecorationEnabled(!validnosti9);
+    }
+
+    public void oslobodiJMBG(MouseEvent mouseEvent) {
+        validationSupport3.setErrorDecorationEnabled(false);
+    }
+
+    public void misTel(MouseEvent mouseEvent) {
+        validationSupport4 = new ValidationSupport();
+        validationSupport4.registerValidator(konTel, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport4.setErrorDecorationEnabled(!validnosti4);
+    }
+
+    public void oslobodiTel(MouseEvent mouseEvent) {
+        validationSupport4.setErrorDecorationEnabled(false);
+    }
+
+    public void misMail(MouseEvent mouseEvent) {
+        validationSupport5 = new ValidationSupport();
+        validationSupport5.registerValidator(mailAdresa, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport5.setErrorDecorationEnabled(!validnosti8);
+    }
+
+    public void oslobodiMail(MouseEvent mouseEvent) {
+        validationSupport5.setErrorDecorationEnabled(false);
+    }
+
+    public void misOdsjek(MouseEvent mouseEvent) {
+        validationSupport6 = new ValidationSupport();
+        validationSupport6.registerValidator(odjesk, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport6.setErrorDecorationEnabled(!validnosti5);
+    }
+
+    public void oslobodiOdsjek(MouseEvent mouseEvent) {
+        validationSupport6.setErrorDecorationEnabled(false);
+    }
+
+    public void misGodina(MouseEvent mouseEvent) {
+        validationSupport7 = new ValidationSupport();
+        validationSupport7.registerValidator(godina, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport7.setErrorDecorationEnabled(!validnosti6);
+    }
+
+    public void oslobodiGodinu(MouseEvent mouseEvent) {
+        validationSupport7.setErrorDecorationEnabled(false);
+    }
+
+    public void misCiklus(MouseEvent mouseEvent) {
+        validationSupport8 = new ValidationSupport();
+        validationSupport8.registerValidator(ciklus, Validator.createEmptyValidator("Text is Required!"));
+        validationSupport8.setErrorDecorationEnabled(!validnosti7);
+    }
+
+    public void oslobodiCiklus(MouseEvent mouseEvent) {
+        validationSupport8.setErrorDecorationEnabled(false);
+    }
 }
