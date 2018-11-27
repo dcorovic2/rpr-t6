@@ -54,9 +54,10 @@ public class Validacija {
     }
 
     public boolean validnoJMBG(String n) {
-        if(n.length() == 13){
+        int vel = n.length();
+        if(vel == 13){
             try{
-                Integer.parseInt(n);
+                Long.parseLong(n);
             } catch (NumberFormatException e){
                 return false;
             }

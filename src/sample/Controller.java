@@ -38,6 +38,13 @@ public class Controller {
             System.out.println("JMBG: " + JMBG.getText() + "\n" + "Datum rodjenja: " + rodjenje.getText() + "\n" + "Mjesto rodjenja: " + mjesto.getValue() + "\n");
             System.out.println("Kontakt adresa: " + konAdresa.getText() + "\n" + "KontaktTelefon: " + konTel.getText() + "\n" + "E-mail adresa: " + mailAdresa.getText() + "\n");
             System.out.println("Odjsek: " + odjesk.getText() + "\n" + "Godina: " + godina.getText() + "\n" + "Ciklus: " + ciklus.getText() + "\n");
+            System.out.println("Da li je student redovan ili redovan samofinansirajući? ");
+            if(dugmeDa1.isSelected()) System.out.println("Jeste\n");
+            if(dugmeNe1.isSelected()) System.out.println("Nije\n");
+
+            System.out.println("Da li student pripada posebnim boračkim kategorijama? ");
+            if(dugmeDa2.isSelected()) System.out.println("Jeste\n");
+            if(dugmeNe2.isSelected()) System.out.println("Nije\n");
 
             imeField.setText("");
             prezimeField.setText("");
