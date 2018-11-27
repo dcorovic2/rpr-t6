@@ -66,4 +66,15 @@ public class Validacija {
         }
         return false;
     }
+
+    public boolean validnoRodjenje(String n, String jmbg) {
+        if(n.length() == 10) {
+            String poredbe = n.substring(0, 2);
+            poredbe += n.substring(3, 5);
+            poredbe += n.substring(7, 10);
+
+            if (jmbg.contains(poredbe)) return true;
+        }
+        return false;
+    }
 }

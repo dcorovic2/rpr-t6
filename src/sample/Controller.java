@@ -34,10 +34,10 @@ public class Controller {
     public RadioButton dugmeNe1;
     public RadioButton dugmeDa2;
     public ValidationSupport validationSupport, validationSupport1, validationSupport2, validationSupport3, validationSupport4, validationSupport5, validationSupport6, validationSupport7, validationSupport8;
-    public boolean validnosti1, validnosti2, validnosti3, validnosti4, validnosti5, validnosti6, validnosti7, validnosti8, validnosti9;
+    public boolean validnosti1, validnosti2, validnosti3, validnosti4, validnosti5, validnosti6, validnosti7, validnosti8, validnosti9, validnosti10;
 
     public void onBtnClick(javafx.event.ActionEvent actionEvent) {
-        if(validnosti1 && validnosti2 && validnosti3 && validnosti4 && validnosti5 && validnosti6 && validnosti7 && validnosti8 && validnosti9) {
+        if(validnosti1 && validnosti2 && validnosti3 && validnosti4 && validnosti5 && validnosti6 && validnosti7 && validnosti8 && validnosti9 && validnosti10) {
             System.out.println("Ime: " + imeField.getText() + "\n" + "Prezime: " + prezimeField.getText() + "\n" + "Broj indeksa: " + indeks.getText() + "\n");
             System.out.println("JMBG: " + JMBG.getText() + "\n" + "Datum rodjenja: " + rodjenje.getText() + "\n" + "Mjesto rodjenja: " + mjesto.getValue() + "\n");
             System.out.println("Kontakt adresa: " + konAdresa.getText() + "\n" + "KontaktTelefon: " + konTel.getText() + "\n" + "E-mail adresa: " + mailAdresa.getText() + "\n");
@@ -358,5 +358,23 @@ public class Controller {
 
     public void oslobodiCiklus(MouseEvent mouseEvent) {
         validationSupport8.setErrorDecorationEnabled(false);
+    }
+
+    public void unosRodjenja(KeyEvent keyEvent) {
+        rodjenje.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                Validacija e = new Validacija();
+                if (e.validnoRodjenje(n, JMBG.getText())) {
+                    rodjenje.getStyleClass().removeAll("poljeNijeIspravno");
+                    rodjenje.getStyleClass().add("poljeIspravno");
+                    validnosti10 = true;
+                } else {
+                    rodjenje.getStyleClass().removeAll("poljeIspravno");
+                    rodjenje.getStyleClass().add("poljeNijeIspravno");
+                    validnosti10 = false;
+                }
+            }
+        });
     }
 }
