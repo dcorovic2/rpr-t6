@@ -22,9 +22,9 @@ public class Validacija {
     }
 
     public boolean validnoTelefon(String n) {
-        if(n.length()>0 && n.length()<=9){
+        if(n.length()==9){
             try{
-                Integer.parseInt(n);
+                Long.parseLong(n);
             } catch (NumberFormatException e){
                 return false;
             }
