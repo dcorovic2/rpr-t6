@@ -31,7 +31,7 @@ class MainTest {
 
     @Test
     void klikPrijava(FXRobot robot) {
-        ime = robot.lookup("#imeField").queryAs(TextArea.class);
+    //    ime = robot.lookup("#imeField").queryAs(TextArea.class);
         ime.setText(ime.getText() + robot.keyPress(KeyCode.D));
     }
 }
