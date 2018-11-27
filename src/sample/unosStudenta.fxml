@@ -40,18 +40,18 @@
                   <Label text="Ime:" />
                   <Label text="Prezime:" GridPane.rowIndex="1" />
                   <Label text="Broj indeksa:" GridPane.rowIndex="2" />
-                  <TextArea fx:id="imeField" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1" onKeyTyped="#unosImena">
+                  <TextArea fx:id="imeField" onKeyTyped="#unosImena" prefHeight="18.0" prefWidth="296.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-                  <TextArea fx:id="prezimeField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#unosPrezimena">
+                  <TextArea fx:id="prezimeField" onKeyTyped="#unosPrezimena" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="5.0" />
                </padding></TextArea>
-                  <TextArea fx:id="indeks" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyTyped="#unosIndeksa">
+                  <TextArea fx:id="indeks" onKeyTyped="#unosIndeksa" prefHeight="21.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
@@ -88,7 +88,7 @@
             <Label text="JMBG:" />
             <Label text="Datum rodjenja:" GridPane.rowIndex="1" />
             <Label text="Mjesto rodjenja:" GridPane.rowIndex="2" />
-            <TextArea fx:id="JMBG" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" onKeyTyped="#unosJMBG">
+            <TextArea fx:id="JMBG" onKeyTyped="#unosJMBG" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
@@ -96,7 +96,7 @@
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <ComboBox fx:id="mjesto" editable="true" prefHeight="25.0" prefWidth="299.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onShowing="#prikazi">
+            <ComboBox fx:id="mjesto" editable="true" onShowing="#prikazi" prefHeight="25.0" prefWidth="299.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -135,11 +135,11 @@
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="konTel" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#unosTelefona">
+            <TextArea fx:id="konTel" onKeyTyped="#unosTelefona" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="mailAdresa" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyTyped="#unosMaila">
+            <TextArea fx:id="mailAdresa" onKeyTyped="#unosMaila" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>
@@ -177,15 +177,15 @@
             <Label text="Ciklus studija:" GridPane.rowIndex="2" />
             <Label text="Da li je student redovan ili redovan samofinansirajući?" GridPane.rowIndex="3" />
             <Label text="Da li student pripada posebnim boračkim kategorijama?" GridPane.rowIndex="4" />
-            <TextArea fx:id="odjesk" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" onKeyTyped="#unosOdsjeka">
+            <TextArea fx:id="odjesk" onKeyTyped="#unosOdsjeka" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="godina" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyTyped="#unosGodine">
+            <TextArea fx:id="godina" onKeyTyped="#unosGodine" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" />
                </GridPane.margin></TextArea>
-            <TextArea fx:id="ciklus" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyTyped="#unosCiklusa">
+            <TextArea fx:id="ciklus" onKeyTyped="#unosCiklusa" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
                </GridPane.margin></TextArea>

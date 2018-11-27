@@ -15,3 +15,7 @@
 .poljeNijeIspravno {
     -fx-control-inner-background: lightpink;
 }
+
+.poljeIsprazni {
+    -fx-control-inner-background: #ffffff;
+}

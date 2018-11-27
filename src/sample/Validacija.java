@@ -34,17 +34,17 @@ public class Validacija {
     }
 
     public boolean validnoOdsjek(String n) {
-        if(n.equals("EE") || n.equals("RI") || n.equals("AE") || n.equals("TK")) return true;
+        if(n.toUpperCase().equals("EE") || n.toUpperCase().equals("RI") || n.toUpperCase().equals("AE") || n.toUpperCase().equals("TK")) return true;
         return false;
     }
 
     public boolean validnoGodine(String n) {
-        if(n.equals("prva") || n.equals("druga") || n.equals("treca")) return true;
+        if(n.toLowerCase().equals("prva") || n.toLowerCase().equals("druga") || n.toLowerCase().equals("treca")) return true;
         return false;
     }
 
     public boolean validnoCiklus(String n) {
-        if(n.equals("bachelor") || n.equals("master") || n.equals("doktorski ciklus") || n.equals("strucni studij")) return true;
+        if(n.toLowerCase().equals("bachelor") || n.toLowerCase().equals("master") || n.toLowerCase().equals("doktorski ciklus") || n.toLowerCase().equals("strucni studij")) return true;
         return false;
     }
 
