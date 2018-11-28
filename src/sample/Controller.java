@@ -469,6 +469,7 @@ public class Controller {
     }
 
     public void izbrisiDefaultDatum(MouseEvent mouseEvent) {
-        rodjenje.setText("");
+        if(rodjenje.getText().equals("dd.mm.yyyy"))
+            rodjenje.setText("");
     }
 }
