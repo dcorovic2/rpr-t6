@@ -467,4 +467,8 @@ public class Controller {
             }
         });
     }
+
+    public void izbrisiDefaultDatum(MouseEvent mouseEvent) {
+        rodjenje.setText("");
+    }
 }
