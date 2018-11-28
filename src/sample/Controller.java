@@ -6,11 +6,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import org.controlsfx.validation.ValidationSupport;
@@ -89,6 +91,14 @@ public class Controller {
     }
 
     public void unosImena(KeyEvent keyEvent) {
+        imeField.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    prezimeField.requestFocus();
+                }
+            }
+        });
         imeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -104,10 +114,17 @@ public class Controller {
                 }
             }
         });
-
     }
 
     public void unosPrezimena(KeyEvent keyEvent) {
+        prezimeField.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    indeks.requestFocus();
+                }
+            }
+        });
         prezimeField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -126,6 +143,15 @@ public class Controller {
     }
 
     public void unosIndeksa(KeyEvent keyEvent) {
+        indeks.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    JMBG.requestFocus();
+                }
+            }
+        });
+
         indeks.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -144,6 +170,15 @@ public class Controller {
     }
 
     public void unosTelefona(KeyEvent keyEvent) {
+        konTel.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    mailAdresa.requestFocus();
+                }
+            }
+        });
+
         konTel.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -162,6 +197,15 @@ public class Controller {
     }
 
     public void unosOdsjeka(KeyEvent keyEvent) {
+        odjesk.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    godina.requestFocus();
+                }
+            }
+        });
+
         odjesk.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -182,6 +226,15 @@ public class Controller {
     }
 
     public void unosGodine(KeyEvent keyEvent) {
+        godina.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    ciklus.requestFocus();
+                }
+            }
+        });
+
         godina.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -218,6 +271,15 @@ public class Controller {
     }
 
     public void unosMaila(KeyEvent keyEvent) {
+        mailAdresa.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    odjesk.requestFocus();
+                }
+            }
+        });
+
         mailAdresa.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -236,6 +298,15 @@ public class Controller {
     }
 
     public void unosJMBG(KeyEvent keyEvent) {
+        JMBG.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    rodjenje.requestFocus();
+                }
+            }
+        });
+
         JMBG.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -361,6 +432,14 @@ public class Controller {
     }
 
     public void unosRodjenja(KeyEvent keyEvent) {
+        rodjenje.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    mjesto.requestFocus();
+                }
+            }
+        });
         rodjenje.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
@@ -373,6 +452,17 @@ public class Controller {
                     rodjenje.getStyleClass().removeAll("poljeIspravno");
                     rodjenje.getStyleClass().add("poljeNijeIspravno");
                     validnosti10 = false;
+                }
+            }
+        });
+    }
+
+    public void unosAdrese(KeyEvent keyEvent) {
+        konAdresa.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.TAB){
+                    konTel.requestFocus();
                 }
             }
         });
