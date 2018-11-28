@@ -5,7 +5,7 @@ public class Validacija {
     public Validacija(){}
 
     public boolean validno(String s){
-        if(s.length()<20 && s.length()>=1) return true;
+        if(s.length()<20 && s.length()>=1 && !s.equals("    ")) return true;
         return false;
     }
 
