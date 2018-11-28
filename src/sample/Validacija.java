@@ -59,6 +59,9 @@ public class Validacija {
         if(vel == 13){
             try{
                 Long.parseLong(n);
+                if((Integer.parseInt(n.substring(0, 2)) >= 1 && Integer.parseInt(n.substring(0, 2)) <= 31) && (Integer.parseInt(n.substring(2, 5)) >= 1 && Integer.parseInt(n.substring(2, 5)) <= 12) && (Integer.parseInt(n.substring(5, 8)) >= 900 && Integer.parseInt(n.substring(5, 8)) <= 18)){
+                    return true;
+                }
             } catch (NumberFormatException e){
                 return false;
             }
